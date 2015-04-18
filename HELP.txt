@@ -1,0 +1,85 @@
+http://forum.ubuntu.org.cn/viewtopic.php?t=461341
+运行环境要求
+硬件：
+x86或x64 CPU
+下载文件夹所在卷容量大于4G
+
+软件：
+Linux x86/x64
+Python3 >= 3.4
+Py3.PyQt5 >= 5.2
+详细的软件依赖参见发行版的打包文件。
+
+其它：
+拥有迅雷账户（会员/非会员均可）
+许可证
+GPLv3 -- Xware Desktop部分
+迅雷协议 -- Xware部分
+
+历史版本（迅雷下载核心1.0.21）：
+附件:
+  xware-desktop_0.10.20140702_i386.deb [1.61 MiB] 
+被下载 3341 次 
+附件:
+  xware-desktop_0.9.20140605_i386.deb [1.6 MiB] 
+被下载 1117 次 
+
+Xware Desktop已打包,打包系统是kubuntu14.04,凡是32位的ubuntu14.04系,应该都能用.
+迅雷版本是1.0.21,包含数个linux原生二进制程序,建议双击安装包进行安装,它还要额外的pyQt5图形库,会自动从ubuntu仓库下载.
+
+第一次先不要登陆,先要设置.启动迅雷软件->菜单栏->文件->设置
+->挂载->添加下载目录,比如我的是/home/name/download.
+->启动与登陆->xwared托管->我们选upstart托管,ETM选随xwared启动
+
+至此设置告一段落.重启PC后,如下图会有两个迅雷的原生进程:
+附件:
+thunder.png 
+thunder.png [ 23.98 KiB | 被浏览 25623 次 ]
+
+
+
+在我的kubuntu开始菜单的因特网子菜单里会有个xwared Desktop的迅雷图标,点击它就能启动迅雷了.
+第一次登陆后会有激活码,点一下即可成功.
+就能跟windows里的迅雷7一样用啦,速度嘛,跟windows完全一样,免费用户同样没有高速通道,要vip才能用.
+
+
+
+迅雷下载核心更新至1.0.25
+附件:
+  xware-desktop_0.10.20140702_i386.deb [1.61 MiB] 
+被下载 3341 次 
+
+
+当然，有能力的同学可以自行编译，在Ubuntu上编译安装说明如下 ：
+编译环境：
+安装必备的软件。
+sudo apt-get install git build-essential devscripts
+下载源代码。
+git clone git://github.com/Xinkai/XwareDesktop.git
+这会在当前目录下生成一个名为XwareDesktop的子目录。
+切换到源代码目录XwareDesktop。
+cd XwareDesktop
+打包
+你需要切换到XwareDesktop的源代码目录。
+列出缺失的编译依赖。
+dpkg-checkbuilddeps。
+如果没有列出任何东西，跳过步骤2。
+安装缺失的编译依赖。
+sudo apt-get install <复制粘贴:上一步列出的缺失的编译依赖>
+制作安装包。
+dpkg-buildpackage
+执行这条命令后会在你当前目录下生成数个包，其中包括xware-desktop_??????.deb安装包。
+
+安装
+回到图形化界面，在XwareDesktop的源代码目录的上级目录，你应该能找到名为xware-desktop_??????.deb的安装包文件， 双击它，按提示安装。
+
+浏览器扩展整合
+Xware Desktop接受来自命令行的参数作为新任务的网址，格式为
+xware-desktop http://www.website.com/file1 ftp://www.website.com/file2 ...
+以Firefox上的Flashgot为例，打开其选项。添加一个新的下载器，程序设置为xware-desktop，参数设置为[URL]。
+来自命令行的参数支持http，https，ftp，ed2k，magnet，flashget，qqdl，thunder等多种协议， 也同样支持本地的torrent文件。
+
+
+注：本软件同linux版115网盘存在冲突，出现如下提示：
+This application failed to start because it could not find or load the Qt platform plugin "xcb".
+Reinstalling the application may fix this problem.
