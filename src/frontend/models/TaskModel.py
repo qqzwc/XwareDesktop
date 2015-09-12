@@ -100,10 +100,10 @@ class TaskModel(QAbstractListModel):
 
     def roleNames(self):
         return {
-            Qt.DisplayRole: "display",
-            TaskDataRole: "taskData",
-            CreationTimeRole: "creationTime",
-            TaskClassRole: "taskClass",
+            Qt.DisplayRole: b"display",
+            TaskDataRole: b"taskData",
+            CreationTimeRole: b"creationTime",
+            TaskClassRole: b"taskClass",
         }
 
     def data(self, qModelIndex: QModelIndex, role = None):
